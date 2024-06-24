@@ -1,0 +1,890 @@
+runcpu v6440 started at 2024-06-21 08:10:18 on "SALserver07"
+runcpu is: /home/arkade/benchmarks/SPEC/cpu2017/bin/harness/runcpu
+runcpu: runcpu '--config=my_config.cfg' '--action=build' 505.mcf_r
+toolset: linux-x86_64
+suite: CPU2017 1.1.5
+
+Locating benchmarks...found 47 benchmarks in 53 benchsets.
+Reading config file '/home/arkade/benchmarks/SPEC/cpu2017/config/my_config.cfg'
+
+1 configuration selected:
+
+Action   Benchmarks
+------   ----------------------------------------------------------------------
+build    505.mcf_r                                                             
+-------------------------------------------------------------------------------
+
+Setting up environment for running 505.mcf_r...
+Starting runcpu for 505.mcf_r...
+Retrieving flags file (/home/arkade/benchmarks/SPEC/cpu2017/config/flags/gcc.xml)...
+Verbosity = 5
+Action    = build
+Tune      = base,peak
+Label     = mytest-m64
+Size      = refrate
+benchmarks= 505.mcf_r
+outputs   = txt,html,cfg,pdf,csv
+username  = arkade
+Environment settings:
+LD_LIBRARY_PATH = "%{gcc_dir}/lib64/:%{gcc_dir}/lib/:/lib64"
+
+Benchmarks selected: 505.mcf_r
+When checking executables (/home/arkade/benchmarks/SPEC/cpu2017/benchspec/CPU/505.mcf_r/exe/mcf_r_base.mytest-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/home/arkade/benchmarks/SPEC/cpu2017/benchspec/CPU/505.mcf_r/exe/mcf_r_peak.mytest-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/home/arkade/benchmarks/SPEC/cpu2017/benchspec/CPU/505.mcf_r/exe/mcf_r_base.mytest-m64), no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/home/arkade/benchmarks/SPEC/cpu2017/benchspec/CPU/505.mcf_r/exe/mcf_r_peak.mytest-m64), no checksums were
+  found in the config file.  They will be installed after build.
+Compiling Binaries
+------------------------------------------------------------------------
+When checking options for /home/arkade/benchmarks/SPEC/cpu2017/benchspec/CPU/505.mcf_r/exe/mcf_r_base.mytest-m64, no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/home/arkade/benchmarks/SPEC/cpu2017/benchspec/CPU/505.mcf_r/exe/mcf_r_base.mytest-m64), no checksums were
+  found in the config file.  They will be installed after build.
+  Building 505.mcf_r base mytest-m64: (build_base_mytest-m64.0000) [2024-06-21 08:10:19]
+  Compile for '505.mcf_r' started at: 2024-06-21 08:10:19 (1718957419)
+Issuing make.clean command 'specmake --output-sync --jobs=8 clean'
+Start make.clean command: 2024-06-21 08:10:19 (1718957419.76466)
+rm -rf *.o  inp.out mcf.out
+find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
+rm -rf mcf_r
+rm -rf mcf_r.exe
+rm -rf core
+Stop make.clean command: 2024-06-21 08:10:19 (1718957419.93153)
+Elapsed time for make.clean command: 00:00:00 (0.166869878768921)
+Issuing make command 'specmake --output-sync --jobs=8 build'
+Start make command: 2024-06-21 08:10:19 (1718957419.93285)
+/usr/bin/gcc     -std=c99   -m64 -c -o pbla.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -g -O3          -fno-strict-aliasing -fno-unsafe-math-optimizations -fno-finite-math-only -fgnu89-inline -fcommon     -DSPEC_LP64  pbla.c
+/usr/bin/gcc     -std=c99   -m64 -c -o pstart.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -g -O3          -fno-strict-aliasing -fno-unsafe-math-optimizations -fno-finite-math-only -fgnu89-inline -fcommon     -DSPEC_LP64  pstart.c
+/usr/bin/gcc     -std=c99   -m64 -c -o output.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -g -O3          -fno-strict-aliasing -fno-unsafe-math-optimizations -fno-finite-math-only -fgnu89-inline -fcommon     -DSPEC_LP64  output.c
+/usr/bin/gcc     -std=c99   -m64 -c -o mcf.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -g -O3          -fno-strict-aliasing -fno-unsafe-math-optimizations -fno-finite-math-only -fgnu89-inline -fcommon     -DSPEC_LP64  mcf.c
+/usr/bin/gcc     -std=c99   -m64 -c -o treeup.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -g -O3          -fno-strict-aliasing -fno-unsafe-math-optimizations -fno-finite-math-only -fgnu89-inline -fcommon     -DSPEC_LP64  treeup.c
+/usr/bin/gcc     -std=c99   -m64 -c -o pflowup.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -g -O3          -fno-strict-aliasing -fno-unsafe-math-optimizations -fno-finite-math-only -fgnu89-inline -fcommon     -DSPEC_LP64  pflowup.c
+/usr/bin/gcc     -std=c99   -m64 -c -o readmin.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -g -O3          -fno-strict-aliasing -fno-unsafe-math-optimizations -fno-finite-math-only -fgnu89-inline -fcommon     -DSPEC_LP64  readmin.c
+readmin.c: In function 'read_min':
+readmin.c:44:5: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result [-Wunused-result]
+   44 |     fgets( instring, 200, in );
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+readmin.c:129:9: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result [-Wunused-result]
+  129 |         fgets( instring, 200, in );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+readmin.c:183:9: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result [-Wunused-result]
+  183 |         fgets( instring, 200, in );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/bin/gcc     -std=c99   -m64 -c -o mcfutil.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -g -O3          -fno-strict-aliasing -fno-unsafe-math-optimizations -fno-finite-math-only -fgnu89-inline -fcommon     -DSPEC_LP64  mcfutil.c
+/usr/bin/gcc     -std=c99   -m64 -c -o pbeampp.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -g -O3          -fno-strict-aliasing -fno-unsafe-math-optimizations -fno-finite-math-only -fgnu89-inline -fcommon     -DSPEC_LP64  pbeampp.c
+/usr/bin/gcc     -std=c99   -m64 -c -o psimplex.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -g -O3          -fno-strict-aliasing -fno-unsafe-math-optimizations -fno-finite-math-only -fgnu89-inline -fcommon     -DSPEC_LP64  psimplex.c
+/usr/bin/gcc     -std=c99   -m64 -c -o implicit.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -g -O3          -fno-strict-aliasing -fno-unsafe-math-optimizations -fno-finite-math-only -fgnu89-inline -fcommon     -DSPEC_LP64  implicit.c
+/usr/bin/gcc     -std=c99   -m64 -c -o spec_qsort/spec_qsort.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -g -O3          -fno-strict-aliasing -fno-unsafe-math-optimizations -fno-finite-math-only -fgnu89-inline -fcommon     -DSPEC_LP64  spec_qsort/spec_qsort.c
+/usr/bin/gcc     -std=c99   -m64      -g -O3          mcf.o mcfutil.o readmin.o implicit.o pstart.o output.o treeup.o pbla.o pflowup.o psimplex.o pbeampp.o spec_qsort/spec_qsort.o             -lm         -o mcf_r  
+Stop make command: 2024-06-21 08:10:20 (1718957420.51242)
+Elapsed time for make command: 00:00:00 (0.579569101333618)
+Issuing options command 'specmake --output-sync --jobs=8 options'
+Start options command: 2024-06-21 08:10:20 (1718957420.51366)
+COMP: "/usr/bin/gcc     -std=c99   -m64 -c -o options.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -g -O3          -fno-strict-aliasing -fno-unsafe-math-optimizations -fno-finite-math-only -fgnu89-inline -fcommon     -DSPEC_LP64  <source>"
+C: CC="/usr/bin/gcc     -std=c99   -m64"
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS=""
+P: BENCH_CFLAGS="-Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP"
+O: OPTIMIZE="-g -O3"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS="-fno-strict-aliasing -fno-unsafe-math-optimizations -fno-finite-math-only -fgnu89-inline -fcommon"
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/usr/bin/gcc     -std=c99   -m64      -g -O3          <objects>   -lm         -o options  "
+C: LD="/usr/bin/gcc     -std=c99   -m64"
+O: OPTIMIZE="-g -O3"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+Stop options command: 2024-06-21 08:10:20 (1718957420.6751)
+Elapsed time for options command: 00:00:00 (0.161444902420044)
+Issuing compiler-version command 'specmake --output-sync --jobs=8 compiler-version'
+Start compiler-version command: 2024-06-21 08:10:20 (1718957420.6768)
+ CC_VERSION_OPTION:
+gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Stop compiler-version command: 2024-06-21 08:10:20 (1718957420.84048)
+Elapsed time for compiler-version command: 00:00:00 (0.163677930831909)
+  Compile for '505.mcf_r' ended at: 2024-06-21 08:10:20 (1718957420)
+  Elapsed compile for '505.mcf_r': 00:00:01 (1)
+Wrote to makefile '/home/arkade/benchmarks/SPEC/cpu2017/tmp/CPU2017.001.0/options.505.mcf_r.base/Makefile.deps':
+# End dependencies
+# These are the build dependencies
+Wrote to makefile '/home/arkade/benchmarks/SPEC/cpu2017/tmp/CPU2017.001.0/options.505.mcf_r.base/Makefile.spec':
+TUNE=base
+LABEL=mytest-m64
+NUMBER=505
+NAME=mcf_r
+SOURCES= mcf.c mcfutil.c readmin.c implicit.c pstart.c output.c treeup.c \
+	 pbla.c pflowup.c psimplex.c pbeampp.c spec_qsort/spec_qsort.c
+EXEBASE=mcf_r
+NEED_MATH=yes
+BENCHLANG=C
+BENCH_CFLAGS     = -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP
+CC               = $(SPECLANG)gcc     -std=c99   -m64
+CC_VERSION_OPTION = --version
+CXX              = $(SPECLANG)g++     -std=c++03 -m64
+CXX_VERSION_OPTION = --version
+EXTRA_CFLAGS     = -fno-strict-aliasing -fno-unsafe-math-optimizations -fno-finite-math-only -fgnu89-inline -fcommon
+EXTRA_PORTABILITY = -DSPEC_LP64
+FC               = $(SPECLANG)gfortran           -m64
+FC_VERSION_OPTION = --version
+OPTIMIZE         = -g -O3
+OS               = unix
+SPECLANG         = /usr/bin/
+absolutely_no_locking = 0
+abstol           = 
+action           = build
+allow_label_override = 0
+backup_config    = 1
+baseexe          = mcf_r
+basepeak         = 0
+benchdir         = benchspec
+benchmark        = 505.mcf_r
+binary           = 
+bindir           = exe
+builddir         = build
+bundleaction     = 
+bundlename       = 
+calctol          = 1
+changedhash      = 0
+check_version    = 0
+clean_between_builds = no
+command_add_redirect = 1
+commanderrfile   = speccmds.err
+commandexe       = mcf_r_base.mytest-m64
+commandfile      = speccmds.cmd
+commandoutfile   = speccmds.out
+commandstdoutfile = speccmds.stdout
+comparedir       = compare
+compareerrfile   = compare.err
+comparefile      = compare.cmd
+compareoutfile   = compare.out
+comparestdoutfile = compare.stdout
+compile_error    = 0
+compwhite        = 
+configdir        = config
+configfile       = my_config.cfg
+configpath       = /home/arkade/benchmarks/SPEC/cpu2017/config/my_config.cfg
+copies           = 1
+current_range    = 
+datadir          = data
+default_size     = ref
+default_submit   = $command
+delay            = 0
+deletebinaries   = 0
+deletework       = 0
+dependent_workloads = 0
+device           = 
+difflines        = 10
+dirprot          = 511
+discard_power_samples = 0
+enable_monitor   = 1
+endian           = 12345678
+env_vars         = 0
+expand_notes     = 0
+expid            = 
+exthash_bits     = 256
+failflags        = 0
+fake             = 0
+feedback         = 1
+flag_url_base    = https://www.spec.org/auto/cpu2017/Docs/benchmarks/flags/
+floatcompare     = 
+force_monitor    = 0
+from_runcpu      = 2
+fw_bios          = 
+hostname         = SALserver07
+http_proxy       = 
+http_timeout     = 30
+hw_avail         = 
+hw_cpu_max_mhz   = 
+hw_cpu_nominal_mhz = 
+hw_model         = 
+hw_ncores        = 
+hw_ncpuorder     = 
+hw_nthreadspercore = 
+hw_ocache        = 
+hw_other         = 
+hw_pcache        = 
+hw_scache        = 
+hw_tcache        = 
+hw_vendor        = My Corporation
+idle_current_range = 
+idledelay        = 10
+idleduration     = 60
+ignore_errors    = 1
+ignore_sigint    = 0
+ignorecase       = 
+info_wrap_columns = 50
+inputdir         = input
+inputgenerrfile  = inputgen.err
+inputgenfile     = inputgen.cmd
+inputgenoutfile  = inputgen.out
+inputgenstdoutfile = inputgen.stdout
+iteration        = -1
+iterations       = 1
+keeptmp          = 0
+label            = mytest-m64
+license_num      = nnn (Your SPEC license number)
+line_width       = 1020
+link_input_files = 1
+locking          = 1
+log              = CPU2017
+log_line_width   = 1020
+log_timestamp    = 0
+logfile          = /home/arkade/benchmarks/SPEC/cpu2017/tmp/CPU2017.001/templogs/preenv.intrate.001.0.log
+logname          = /home/arkade/benchmarks/SPEC/cpu2017/tmp/CPU2017.001/templogs/preenv.intrate.001.0.log
+lognum           = 001.0
+mail_reports     = all
+mailcompress     = 0
+mailmethod       = smtp
+mailport         = 25
+mailserver       = 127.0.0.1
+mailto           = 
+make             = specmake
+make_no_clobber  = 0
+makefile_template = Makefile.YYYtArGeTYYYspec
+makeflags        = --jobs=8
+max_average_uncertainty = 1
+max_hum_limit    = 0
+max_report_runs  = 3
+max_unknown_uncertainty = 1
+mean_anyway      = 1
+meter_connect_timeout = 30
+meter_errors_default = 5
+meter_errors_percentage = 5
+min_report_runs  = 2
+min_temp_limit   = 20
+minimize_builddirs = 0
+minimize_rundirs = 0
+name             = mcf_r
+nansupport       = 
+need_math        = yes
+no_input_handler = close
+no_monitor       = 
+noratios         = 0
+note_preenv      = 1
+notes_wrap_columns = 0
+notes_wrap_indent =   
+num              = 505
+obiwan           = 
+os_exe_ext       = 
+output_format    = txt,html,cfg,pdf,csv
+output_root      = 
+outputdir        = output
+parallel_test    = 0
+parallel_test_submit = 0
+parallel_test_workloads = 
+path             = /home/arkade/benchmarks/SPEC/cpu2017/benchspec/CPU/505.mcf_r
+plain_train      = 1
+platform         = 
+power            = 0
+preENV_LD_LIBRARY_PATH = %{gcc_dir}/lib64/:%{gcc_dir}/lib/:/lib64
+preenv           = 0
+prefix           = 
+ranks            = 1
+rawhash_bits     = 256
+rebuild          = 0
+reftime          = reftime
+reltol           = 
+reportable       = 0
+resultdir        = result
+review           = 0
+run              = all
+runcpu           = /home/arkade/benchmarks/SPEC/cpu2017/bin/harness/runcpu --configfile my_config.cfg --action build --noreportable --nopower --runmode rate --tune base:peak --size refrate 505.mcf_r --nopreenv --note-preenv --logfile /home/arkade/benchmarks/SPEC/cpu2017/tmp/CPU2017.001/templogs/preenv.intrate.001.0.log --lognum 001.0 --from_runcpu 2
+rundir           = run
+runmode          = rate
+safe_eval        = 1
+save_build_files = 
+section_specifier_fatal = 1
+setprocgroup     = 1
+setup_error      = 0
+sigint           = 2
+size             = refrate
+size_class       = ref
+skipabstol       = 
+skipobiwan       = 
+skipreltol       = 
+skiptol          = 
+smarttune        = base
+specdiff         = specdiff
+specrun          = specinvoke
+srcalt           = 
+srcdir           = src
+srcsource        = /home/arkade/benchmarks/SPEC/cpu2017/benchspec/CPU/505.mcf_r/src
+stagger          = 10
+strict_rundir_verify = 1
+sw_avail         = 
+sw_base_ptrsize  = 64-bit
+sw_compiler001   = C/C++/Fortran: Version 10.1.0 of GCC, the
+sw_compiler002   = GNU Compiler Collection
+sw_other         = 
+sw_peak_ptrsize  = 64-bit
+sysinfo_hash_bits = 256
+sysinfo_program  = 
+sysinfo_program_hash = 
+table            = 1
+teeout           = 0
+test_date        = Jun-2024
+test_sponsor     = My Corporation
+tester           = My Corporation
+threads          = 1
+top              = /home/arkade/benchmarks/SPEC/cpu2017
+train_single_thread = 0
+train_with       = train
+tune             = base
+uid              = 2017
+unbuffer         = 1
+uncertainty_exception = 5
+update           = 0
+update_url       = http://www.spec.org/auto/cpu2017/updates/
+use_submit_for_compare = 0
+use_submit_for_speed = 0
+username         = arkade
+valid_build      = yes
+verbose          = 5
+verify_binaries  = 1
+version          = 1.000503
+voltage_range    = 
+worklist         = list
+OUTPUT_RMFILES   = inp.out mcf.out
+COMP: "/usr/bin/gcc     -std=c99   -m64 -c -o options.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -g -O3          -fno-strict-aliasing -fno-unsafe-math-optimizations -fno-finite-math-only -fgnu89-inline -fcommon     -DSPEC_LP64  <source>"
+C: CC="/usr/bin/gcc     -std=c99   -m64"
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS=""
+P: BENCH_CFLAGS="-Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP"
+O: OPTIMIZE="-g -O3"
+O: COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS="-fno-strict-aliasing -fno-unsafe-math-optimizations -fno-finite-math-only -fgnu89-inline -fcommon"
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/usr/bin/gcc     -std=c99   -m64      -g -O3          <objects>   -lm         -o options  "
+C: LD="/usr/bin/gcc     -std=c99   -m64"
+O: OPTIMIZE="-g -O3"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+ CC_VERSION_OPTION:
+gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+------------------------------------------------------------------------
+When checking options for /home/arkade/benchmarks/SPEC/cpu2017/benchspec/CPU/505.mcf_r/exe/mcf_r_peak.mytest-m64, no checksums were
+  found in the config file.  They will be installed after build.
+When checking executables (/home/arkade/benchmarks/SPEC/cpu2017/benchspec/CPU/505.mcf_r/exe/mcf_r_peak.mytest-m64), no checksums were
+  found in the config file.  They will be installed after build.
+  Building 505.mcf_r peak mytest-m64: (build_peak_mytest-m64.0000) [2024-06-21 08:10:21]
+  Compile for '505.mcf_r' started at: 2024-06-21 08:10:21 (1718957421)
+Issuing make.clean command 'specmake --output-sync --jobs=8 clean'
+Start make.clean command: 2024-06-21 08:10:21 (1718957421.23458)
+rm -rf *.o  inp.out mcf.out
+find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
+rm -rf mcf_r
+rm -rf mcf_r.exe
+rm -rf core
+Stop make.clean command: 2024-06-21 08:10:21 (1718957421.40103)
+Elapsed time for make.clean command: 00:00:00 (0.166445970535278)
+Issuing fdo_make_pass1 command 'specmake --output-sync --jobs=8 --always-make build FDO=PASS1'
+Start fdo_make_pass1 command: 2024-06-21 08:10:21 (1718957421.40274)
+/usr/bin/gcc     -std=c99   -m64 -c -o pbla.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-generate  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  pbla.c
+/usr/bin/gcc     -std=c99   -m64 -c -o treeup.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-generate  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  treeup.c
+/usr/bin/gcc     -std=c99   -m64 -c -o output.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-generate  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  output.c
+/usr/bin/gcc     -std=c99   -m64 -c -o readmin.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-generate  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  readmin.c
+readmin.c: In function 'read_min':
+readmin.c:44:5: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result [-Wunused-result]
+   44 |     fgets( instring, 200, in );
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+readmin.c:129:9: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result [-Wunused-result]
+  129 |         fgets( instring, 200, in );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+readmin.c:183:9: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result [-Wunused-result]
+  183 |         fgets( instring, 200, in );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/bin/gcc     -std=c99   -m64 -c -o pstart.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-generate  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  pstart.c
+/usr/bin/gcc     -std=c99   -m64 -c -o mcfutil.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-generate  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  mcfutil.c
+/usr/bin/gcc     -std=c99   -m64 -c -o mcf.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-generate  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  mcf.c
+/usr/bin/gcc     -std=c99   -m64 -c -o pflowup.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-generate  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  pflowup.c
+/usr/bin/gcc     -std=c99   -m64 -c -o implicit.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-generate  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  implicit.c
+/usr/bin/gcc     -std=c99   -m64 -c -o spec_qsort/spec_qsort.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-generate  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  spec_qsort/spec_qsort.c
+/usr/bin/gcc     -std=c99   -m64 -c -o psimplex.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-generate  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  psimplex.c
+/usr/bin/gcc     -std=c99   -m64 -c -o pbeampp.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-generate  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  pbeampp.c
+/usr/bin/gcc     -std=c99   -m64     -fprofile-generate  -g -Ofast -flto          mcf.o mcfutil.o readmin.o implicit.o pstart.o output.o treeup.o pbla.o pflowup.o psimplex.o pbeampp.o spec_qsort/spec_qsort.o             -lm         -o mcf_r  
+Stop fdo_make_pass1 command: 2024-06-21 08:10:22 (1718957422.94733)
+Elapsed time for fdo_make_pass1 command: 00:00:01 (1.54459095001221)
+Issuing options1 command 'specmake --output-sync --jobs=8 options FDO=PASS1'
+Start options1 command: 2024-06-21 08:10:22 (1718957422.94881)
+COMP: "/usr/bin/gcc     -std=c99   -m64 -c -o options.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-generate  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  <source>"
+C: CC="/usr/bin/gcc     -std=c99   -m64"
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS=""
+P: BENCH_CFLAGS="-Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP"
+O: PASS1_FLAGS="-fprofile-generate"
+O: PASS1_CFLAGS=""
+O: OPTIMIZE="-g -Ofast -flto"
+O: COPTIMIZE=""
+O: PASS1_OPTIMIZE=""
+O: PASS1_COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS="-fno-strict-aliasing"
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/usr/bin/gcc     -std=c99   -m64     -fprofile-generate  -g -Ofast -flto          <objects>   -lm         -o options  "
+C: LD="/usr/bin/gcc     -std=c99   -m64"
+O: OPTIMIZE="-g -Ofast -flto"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+Stop options1 command: 2024-06-21 08:10:23 (1718957423.11084)
+Elapsed time for options1 command: 00:00:00 (0.162030935287476)
+Issuing compiler-version1 command 'specmake --output-sync --jobs=8 compiler-version FDO=PASS1'
+Start compiler-version1 command: 2024-06-21 08:10:23 (1718957423.11229)
+PASS1 CC_VERSION_OPTION:
+gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Stop compiler-version1 command: 2024-06-21 08:10:23 (1718957423.27613)
+Elapsed time for compiler-version1 command: 00:00:00 (0.163837909698486)
+Training 505.mcf_r with the train workload
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+Commands to run (specinvoke command file):
+    -r
+    -N C
+    -C /home/arkade/benchmarks/SPEC/cpu2017/benchspec/CPU/505.mcf_r/build/build_peak_mytest-m64.0000
+    -o inp.out -e inp.err ../build_peak_mytest-m64.0000/mcf_r inp.in  > inp.out 2>> inp.err (timed)
+Specinvoke: /home/arkade/benchmarks/SPEC/cpu2017/bin/specinvoke -d /home/arkade/benchmarks/SPEC/cpu2017/benchspec/CPU/505.mcf_r/build/build_peak_mytest-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+Issuing command '/home/arkade/benchmarks/SPEC/cpu2017/bin/specinvoke -d /home/arkade/benchmarks/SPEC/cpu2017/benchspec/CPU/505.mcf_r/build/build_peak_mytest-m64.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout'
+Start command: 2024-06-21 08:10:23 (1718957423.34292)
+Stop command: 2024-06-21 08:11:14 (1718957474.43042)
+Elapsed time for command: 00:00:51 (51.0875060558319)
+Workload elapsed time (copy 0 workload 1) = 50.931764 seconds
+Copy 0 of 505.mcf_r (peak train) run 1 finished at 2024-06-21 08:11:14.  Total elapsed time: 50.931764
+OpenMP environment variables removed: None
+OpenMP environment variables in effect:
+	OMP_NUM_THREADS	=> '1'
+	OMP_THREAD_LIMIT	=> '1'
+Pre-run environment changes:
+	'OMP_NUM_THREADS' added: (value now '1')
+	'OMP_THREAD_LIMIT' added: (value now '1')
+comparing 'inp.out' with 
+comparing 'mcf.out' with 
+Specinvoke: /home/arkade/benchmarks/SPEC/cpu2017/bin/specinvoke -d /home/arkade/benchmarks/SPEC/cpu2017/benchspec/CPU/505.mcf_r/build/build_peak_mytest-m64.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+Issuing command '/home/arkade/benchmarks/SPEC/cpu2017/bin/specinvoke -d /home/arkade/benchmarks/SPEC/cpu2017/benchspec/CPU/505.mcf_r/build/build_peak_mytest-m64.0000 -f compare.cmd -E -e compare.err -o compare.stdout'
+Start command: 2024-06-21 08:11:14 (1718957474.47628)
+Stop command: 2024-06-21 08:11:14 (1718957474.8273)
+Elapsed time for command: 00:00:00 (0.351014137268066)
+Issuing fdo_make_clean_pass2 command 'specmake --output-sync --jobs=8 fdoclean FDO=PASS2'
+Start fdo_make_clean_pass2 command: 2024-06-21 08:11:14 (1718957474.8297)
+rm -rf *.o  inp.out mcf.out
+find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
+rm -rf mcf_r
+rm -rf mcf_r.exe
+Stop fdo_make_clean_pass2 command: 2024-06-21 08:11:14 (1718957474.99511)
+Elapsed time for fdo_make_clean_pass2 command: 00:00:00 (0.165412902832031)
+Issuing fdo_make_pass2 command 'specmake --output-sync --jobs=8 --always-make build FDO=PASS2'
+Start fdo_make_pass2 command: 2024-06-21 08:11:14 (1718957474.9966)
+/usr/bin/gcc     -std=c99   -m64 -c -o pbla.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-use  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  pbla.c
+/usr/bin/gcc     -std=c99   -m64 -c -o pstart.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-use  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  pstart.c
+/usr/bin/gcc     -std=c99   -m64 -c -o output.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-use  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  output.c
+/usr/bin/gcc     -std=c99   -m64 -c -o treeup.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-use  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  treeup.c
+/usr/bin/gcc     -std=c99   -m64 -c -o mcf.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-use  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  mcf.c
+/usr/bin/gcc     -std=c99   -m64 -c -o readmin.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-use  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  readmin.c
+readmin.c: In function 'read_min':
+readmin.c:44:5: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result [-Wunused-result]
+   44 |     fgets( instring, 200, in );
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+readmin.c:129:9: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result [-Wunused-result]
+  129 |         fgets( instring, 200, in );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+readmin.c:183:9: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result [-Wunused-result]
+  183 |         fgets( instring, 200, in );
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/bin/gcc     -std=c99   -m64 -c -o mcfutil.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-use  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  mcfutil.c
+/usr/bin/gcc     -std=c99   -m64 -c -o implicit.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-use  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  implicit.c
+/usr/bin/gcc     -std=c99   -m64 -c -o spec_qsort/spec_qsort.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-use  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  spec_qsort/spec_qsort.c
+/usr/bin/gcc     -std=c99   -m64 -c -o pflowup.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-use  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  pflowup.c
+/usr/bin/gcc     -std=c99   -m64 -c -o psimplex.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-use  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  psimplex.c
+/usr/bin/gcc     -std=c99   -m64 -c -o pbeampp.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-use  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  pbeampp.c
+/usr/bin/gcc     -std=c99   -m64     -fprofile-use  -g -Ofast -flto          mcf.o mcfutil.o readmin.o implicit.o pstart.o output.o treeup.o pbla.o pflowup.o psimplex.o pbeampp.o spec_qsort/spec_qsort.o             -lm         -o mcf_r  
+Stop fdo_make_pass2 command: 2024-06-21 08:11:15 (1718957475.67975)
+Elapsed time for fdo_make_pass2 command: 00:00:00 (0.683148860931396)
+Issuing options2 command 'specmake --output-sync --jobs=8 options FDO=PASS2'
+Start options2 command: 2024-06-21 08:11:15 (1718957475.68122)
+COMP: "/usr/bin/gcc     -std=c99   -m64 -c -o options.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-use  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  <source>"
+C: CC="/usr/bin/gcc     -std=c99   -m64"
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS=""
+P: BENCH_CFLAGS="-Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP"
+O: PASS2_FLAGS="-fprofile-use"
+O: PASS2_CFLAGS=""
+O: OPTIMIZE="-g -Ofast -flto"
+O: COPTIMIZE=""
+O: PASS2_OPTIMIZE=""
+O: PASS2_COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS="-fno-strict-aliasing"
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/usr/bin/gcc     -std=c99   -m64     -fprofile-use  -g -Ofast -flto          <objects>   -lm         -o options  "
+C: LD="/usr/bin/gcc     -std=c99   -m64"
+O: OPTIMIZE="-g -Ofast -flto"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+Stop options2 command: 2024-06-21 08:11:15 (1718957475.84361)
+Elapsed time for options2 command: 00:00:00 (0.162389993667603)
+Issuing compiler-version2 command 'specmake --output-sync --jobs=8 compiler-version FDO=PASS2'
+Start compiler-version2 command: 2024-06-21 08:11:15 (1718957475.84505)
+PASS2 CC_VERSION_OPTION:
+gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Stop compiler-version2 command: 2024-06-21 08:11:16 (1718957476.00893)
+Elapsed time for compiler-version2 command: 00:00:00 (0.163881063461304)
+  Compile for '505.mcf_r' ended at: 2024-06-21 08:11:16 (1718957476)
+  Elapsed compile for '505.mcf_r': 00:00:55 (55)
+Wrote to makefile '/home/arkade/benchmarks/SPEC/cpu2017/tmp/CPU2017.001.0/options.505.mcf_r.peak/Makefile.deps':
+# End dependencies
+# These are the build dependencies
+Wrote to makefile '/home/arkade/benchmarks/SPEC/cpu2017/tmp/CPU2017.001.0/options.505.mcf_r.peak/Makefile.spec':
+TUNE=peak
+LABEL=mytest-m64
+NUMBER=505
+NAME=mcf_r
+SOURCES= mcf.c mcfutil.c readmin.c implicit.c pstart.c output.c treeup.c \
+	 pbla.c pflowup.c psimplex.c pbeampp.c spec_qsort/spec_qsort.c
+EXEBASE=mcf_r
+NEED_MATH=yes
+BENCHLANG=C
+BENCH_CFLAGS     = -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP
+CC               = $(SPECLANG)gcc     -std=c99   -m64
+CC_VERSION_OPTION = --version
+CXX              = $(SPECLANG)g++     -std=c++03 -m64
+CXX_VERSION_OPTION = --version
+EXTRA_CFLAGS     = -fno-strict-aliasing
+EXTRA_PORTABILITY = -DSPEC_LP64
+FC               = $(SPECLANG)gfortran           -m64
+FC_VERSION_OPTION = --version
+OPTIMIZE         = -g -Ofast -flto
+OS               = unix
+PASS1_FLAGS      = -fprofile-generate
+PASS2_FLAGS      = -fprofile-use
+SPECLANG         = /usr/bin/
+absolutely_no_locking = 0
+abstol           = 
+action           = build
+allow_label_override = 0
+backup_config    = 1
+baseexe          = mcf_r
+basepeak         = 0
+benchdir         = benchspec
+benchmark        = 505.mcf_r
+binary           = 
+bindir           = exe
+builddir         = build
+bundleaction     = 
+bundlename       = 
+calctol          = 1
+changedhash      = 0
+check_version    = 0
+clean_between_builds = no
+command_add_redirect = 1
+commanderrfile   = speccmds.err
+commandexe       = mcf_r_peak.mytest-m64
+commandfile      = speccmds.cmd
+commandoutfile   = speccmds.out
+commandstdoutfile = speccmds.stdout
+comparedir       = compare
+compareerrfile   = compare.err
+comparefile      = compare.cmd
+compareoutfile   = compare.out
+comparestdoutfile = compare.stdout
+compile_error    = 0
+compwhite        = 
+configdir        = config
+configfile       = my_config.cfg
+configpath       = /home/arkade/benchmarks/SPEC/cpu2017/config/my_config.cfg
+copies           = 1
+current_range    = 
+datadir          = data
+default_size     = ref
+default_submit   = $command
+delay            = 0
+deletebinaries   = 0
+deletework       = 0
+dependent_workloads = 0
+device           = 
+difflines        = 10
+dirprot          = 511
+discard_power_samples = 0
+enable_monitor   = 1
+endian           = 12345678
+env_vars         = 0
+expand_notes     = 0
+expid            = 
+exthash_bits     = 256
+failflags        = 0
+fake             = 0
+feedback         = 1
+flag_url_base    = https://www.spec.org/auto/cpu2017/Docs/benchmarks/flags/
+floatcompare     = 
+force_monitor    = 0
+from_runcpu      = 2
+fw_bios          = 
+hostname         = SALserver07
+http_proxy       = 
+http_timeout     = 30
+hw_avail         = 
+hw_cpu_max_mhz   = 
+hw_cpu_nominal_mhz = 
+hw_model         = 
+hw_ncores        = 
+hw_ncpuorder     = 
+hw_nthreadspercore = 
+hw_ocache        = 
+hw_other         = 
+hw_pcache        = 
+hw_scache        = 
+hw_tcache        = 
+hw_vendor        = My Corporation
+idle_current_range = 
+idledelay        = 10
+idleduration     = 60
+ignore_errors    = 1
+ignore_sigint    = 0
+ignorecase       = 
+info_wrap_columns = 50
+inputdir         = input
+inputgenerrfile  = inputgen.err
+inputgenfile     = inputgen.cmd
+inputgenoutfile  = inputgen.out
+inputgenstdoutfile = inputgen.stdout
+iteration        = -1
+iterations       = 1
+keeptmp          = 0
+label            = mytest-m64
+license_num      = nnn (Your SPEC license number)
+line_width       = 1020
+link_input_files = 1
+locking          = 1
+log              = CPU2017
+log_line_width   = 1020
+log_timestamp    = 0
+logfile          = /home/arkade/benchmarks/SPEC/cpu2017/tmp/CPU2017.001/templogs/preenv.intrate.001.0.log
+logname          = /home/arkade/benchmarks/SPEC/cpu2017/tmp/CPU2017.001/templogs/preenv.intrate.001.0.log
+lognum           = 001.0
+mail_reports     = all
+mailcompress     = 0
+mailmethod       = smtp
+mailport         = 25
+mailserver       = 127.0.0.1
+mailto           = 
+make             = specmake
+make_no_clobber  = 0
+makefile_template = Makefile.YYYtArGeTYYYspec
+makeflags        = --jobs=8
+max_average_uncertainty = 1
+max_hum_limit    = 0
+max_report_runs  = 3
+max_unknown_uncertainty = 1
+mean_anyway      = 1
+meter_connect_timeout = 30
+meter_errors_default = 5
+meter_errors_percentage = 5
+min_report_runs  = 2
+min_temp_limit   = 20
+minimize_builddirs = 0
+minimize_rundirs = 0
+name             = mcf_r
+nansupport       = 
+need_math        = yes
+no_input_handler = close
+no_monitor       = 
+noratios         = 0
+note_preenv      = 1
+notes_wrap_columns = 0
+notes_wrap_indent =   
+num              = 505
+obiwan           = 
+oldhash          = 
+os_exe_ext       = 
+output_format    = txt,html,cfg,pdf,csv
+output_root      = 
+outputdir        = output
+parallel_test    = 0
+parallel_test_submit = 0
+parallel_test_workloads = 
+path             = /home/arkade/benchmarks/SPEC/cpu2017/benchspec/CPU/505.mcf_r
+plain_train      = 1
+platform         = 
+power            = 0
+preENV_LD_LIBRARY_PATH = %{gcc_dir}/lib64/:%{gcc_dir}/lib/:/lib64
+preenv           = 0
+prefix           = 
+ranks            = 1
+rawhash_bits     = 256
+rebuild          = 0
+reftime          = reftime
+reltol           = 
+reportable       = 0
+resultdir        = result
+review           = 0
+run              = all
+runcpu           = /home/arkade/benchmarks/SPEC/cpu2017/bin/harness/runcpu --configfile my_config.cfg --action build --noreportable --nopower --runmode rate --tune base:peak --size refrate 505.mcf_r --nopreenv --note-preenv --logfile /home/arkade/benchmarks/SPEC/cpu2017/tmp/CPU2017.001/templogs/preenv.intrate.001.0.log --lognum 001.0 --from_runcpu 2
+rundir           = run
+runmode          = rate
+safe_eval        = 1
+save_build_files = 
+section_specifier_fatal = 1
+setprocgroup     = 1
+setup_error      = 0
+sigint           = 2
+size             = refrate
+size_class       = ref
+skipabstol       = 
+skipobiwan       = 
+skipreltol       = 
+skiptol          = 
+smarttune        = peak
+specdiff         = specdiff
+specrun          = specinvoke
+srcalt           = 
+srcdir           = src
+srcsource        = /home/arkade/benchmarks/SPEC/cpu2017/benchspec/CPU/505.mcf_r/src
+stagger          = 10
+strict_rundir_verify = 1
+sw_avail         = 
+sw_base_ptrsize  = 64-bit
+sw_compiler001   = C/C++/Fortran: Version 10.1.0 of GCC, the
+sw_compiler002   = GNU Compiler Collection
+sw_other         = 
+sw_peak_ptrsize  = 64-bit
+sysinfo_hash_bits = 256
+sysinfo_program  = 
+sysinfo_program_hash = 
+table            = 1
+teeout           = 0
+test_date        = Jun-2024
+test_sponsor     = My Corporation
+tester           = My Corporation
+threads          = 1
+top              = /home/arkade/benchmarks/SPEC/cpu2017
+train_single_thread = 0
+train_with       = train
+tune             = peak
+uid              = 2017
+unbuffer         = 1
+uncertainty_exception = 5
+update           = 0
+update_url       = http://www.spec.org/auto/cpu2017/updates/
+use_submit_for_compare = 0
+use_submit_for_speed = 0
+username         = arkade
+valid_build      = yes
+verbose          = 5
+verify_binaries  = 1
+version          = 1.000503
+voltage_range    = 
+worklist         = list
+OUTPUT_RMFILES   = inp.out mcf.out
+COMP: "/usr/bin/gcc     -std=c99   -m64 -c -o options.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-generate  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  <source>"
+C: CC="/usr/bin/gcc     -std=c99   -m64"
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS=""
+P: BENCH_CFLAGS="-Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP"
+O: PASS1_FLAGS="-fprofile-generate"
+O: PASS1_CFLAGS=""
+O: OPTIMIZE="-g -Ofast -flto"
+O: COPTIMIZE=""
+O: PASS1_OPTIMIZE=""
+O: PASS1_COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS="-fno-strict-aliasing"
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/usr/bin/gcc     -std=c99   -m64     -fprofile-generate  -g -Ofast -flto          <objects>   -lm         -o options  "
+C: LD="/usr/bin/gcc     -std=c99   -m64"
+O: OPTIMIZE="-g -Ofast -flto"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+PASS1 CC_VERSION_OPTION:
+gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+COMP: "/usr/bin/gcc     -std=c99   -m64 -c -o options.o -DSPEC -DNDEBUG  -Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP -fprofile-use  -g -Ofast -flto          -fno-strict-aliasing     -DSPEC_LP64  <source>"
+C: CC="/usr/bin/gcc     -std=c99   -m64"
+C: COBJOPT="-c -o options"
+P: CPUFLAGS="-DSPEC -DNDEBUG"
+P: BENCH_FLAGS=""
+P: BENCH_CFLAGS="-Ispec_qsort -DSPEC_AUTO_SUPPRESS_OPENMP"
+O: PASS2_FLAGS="-fprofile-use"
+O: PASS2_CFLAGS=""
+O: OPTIMIZE="-g -Ofast -flto"
+O: COPTIMIZE=""
+O: PASS2_OPTIMIZE=""
+O: PASS2_COPTIMIZE=""
+P: PORTABILITY=""
+P: CPORTABILITY=""
+O: EXTRA_CFLAGS="-fno-strict-aliasing"
+O: EXTRA_OPTIMIZE=""
+O: EXTRA_COPTIMIZE=""
+P: EXTRA_PORTABILITY="-DSPEC_LP64"
+P: EXTRA_CPORTABILITY=""
+LINK: "/usr/bin/gcc     -std=c99   -m64     -fprofile-use  -g -Ofast -flto          <objects>   -lm         -o options  "
+C: LD="/usr/bin/gcc     -std=c99   -m64"
+O: OPTIMIZE="-g -Ofast -flto"
+C: MATH_LIBS="-lm"
+C: LDOUT="-o options"
+PASS2 CC_VERSION_OPTION:
+gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+Build successes for intrate: 505.mcf_r(base), 505.mcf_r(peak)
+Build errors for intrate: None
+
+Build Complete
+runcpu finished at 2024-06-21 08:11:16; 57 total seconds elapsed
+Info: file_tail(525220): file '/home/arkade/benchmarks/SPEC/cpu2017/tmp/CPU2017.001/templogs/preenv.intrate.001.0.log.debug' was removed and will no longer be followed.  No action is required.
+The log for this run is in /home/arkade/benchmarks/SPEC/cpu2017/result/CPU2017.001.log
+
+runcpu finished at 2024-06-21 08:11:16; 58 total seconds elapsed
