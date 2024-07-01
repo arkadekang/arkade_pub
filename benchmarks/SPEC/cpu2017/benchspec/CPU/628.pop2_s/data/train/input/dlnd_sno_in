@@ -1,7 +1,0 @@
- &shr_strdata_nml
-   dataMode       = 'NULL'
-   domainFile     = 'null'
-   streams        = 'null' ,
-                    'null' ,
-                    'null' 
-  /

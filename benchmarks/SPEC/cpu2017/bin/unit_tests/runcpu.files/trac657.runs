@@ -1,5 +1,0 @@
-
--S lib=stlport4
--S lib=stdcxx4
--S lib=gnu2003
--S lib=foo

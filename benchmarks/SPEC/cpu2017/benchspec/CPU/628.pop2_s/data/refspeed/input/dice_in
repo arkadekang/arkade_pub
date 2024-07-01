@@ -1,5 +1,0 @@
-  &dice_nml
-    ice_in = 'dice_ice_in'
-    decomp = '1d'
-    flux_Qacc     = .true.
-  /

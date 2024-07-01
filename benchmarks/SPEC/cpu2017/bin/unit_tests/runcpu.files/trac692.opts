@@ -1,1 +1,0 @@
--C -f 'egrep "No benchmark suite|log for this run"'

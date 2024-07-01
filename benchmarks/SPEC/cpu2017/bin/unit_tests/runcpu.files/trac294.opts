@@ -1,1 +1,0 @@
--f 'egrep "^Running|^Compiling|OpenMP|^[ 	]OMP_|same-for-all|for base runs of"'

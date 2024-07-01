@@ -1,8 +1,0 @@
-data/all/input
-!cpu2017_mhonarc.rc
-!lib/Mail/SpamAssassin
-!lib/Mail/SpamAssassin.pm
-!rules
-!ham.pl
-!spam.pl
-!mailcomp.pm

@@ -1,1 +1,0 @@
--f 'egrep -i "BIND |taskset| -b [0-9]" | sed "s#/run_[^/]*#/run_dir#"'
