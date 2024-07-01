@@ -1,0 +1,2 @@
+# no output files in build directory
+benchspec/CPU/505.mcf_r/build/*
