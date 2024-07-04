@@ -1,2 +1,2 @@
 # no output files in build directory
-#benchmarks/SPEC/cpu2017/benchspec/CPU/**
+benchmarks/SPEC/cpu2017/benchspec/CPU/
