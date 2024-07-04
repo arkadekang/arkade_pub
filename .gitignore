@@ -1,2 +1,11 @@
 # no output files in build directory
 benchmarks/SPEC/cpu2017/benchspec/CPU/
+benchmarks/SPEC/cpu2017/tools/
+benchmarks/SPEC/cpu2017/tmp/
+benchmarks/SPEC/cpu2017/result/
+benchmarks/SPEC/cpu2017/bin/
+benchmarks/SPEC/cpu2017/PTDaemon/
+benchmarks/SPEC/cpu2017/Docs/
+benchmarks/SPEC/cpu2017/*.out
+benchmarks/SPEC/cpu2017/*shrc
+benchmarks/SPEC/cpu2017/install*

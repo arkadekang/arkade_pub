@@ -1,0 +1,10 @@
+#!/bin/bash -f
+
+echo "Determine time unit [i, ms, B]"
+read TIME_UNIT
+
+valgrind --extra-debuginfo-path=/usr/lib/debug/.build-id/81 \
+         --tool=massif 						   \
+		 --time-unit=$TIME_UNIT 			   \
+		 --detailed-freq=1 					   \
+		 ./run_cpu_tmp
