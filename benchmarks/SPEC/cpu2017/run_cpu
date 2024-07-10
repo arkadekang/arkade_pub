@@ -1,12 +1,14 @@
 #!/bin/bash -f
 
 source shrc
+ulimit -s 122880
 
 #runcpu --config=my_config.cfg --size=test --copies=1 --noreportable --iterations=1 intrate
 #runcpu --config=my_config.cfg --copies=16 --reportable --iterations=1 intrate
-#runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 intrate
-#runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 intspeed
-#runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 fprate
-#runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 fpspeed
+runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 fpspeed
+runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 fprate
+runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 intrate
+runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 intspeed
 #runcpu --config=my_config.cfg --copies=1 --noreportable --iterations=1 503.bwaves_r
-runcpu --config=my_config.cfg --copies=1 --noreportable --iterations=1 521.wrf_r
+#runcpu --config=my_config.cfg --copies=1 --noreportable --iterations=1 521.wrf_r
+#runcpu --config=my_config.cfg --copies=1 --noreportable --iterations=1 505.mcf_r

@@ -3,8 +3,31 @@
 echo "Determine time unit [i, ms, B]"
 read TIME_UNIT
 
+echo "Determine the tool [mf, mk]"
+read MEM_TOOL
+
+
+if [ $MEM_TOOL == "mf" ]; then
+    export MEM_TOOL="massif"
+elif [ $MEM_TOOL == "mk" ]; then
+    export MEM_TOOL="memcheck"
+else
+    echo "Invalid tool selection. Please choose 'mf' or 'mk'."
+    exit 1
+fi
+
+if [ $MEM_TOOL == "memcheck" ]; then
+    LEAK_CHECK_OPTION="--leak-check=full"
+else
+    LEAK_CHECK_OPTION=""
+fi
+
 valgrind --extra-debuginfo-path=/usr/lib/debug/.build-id/81 \
-         --tool=massif                                      \
-		 --time-unit=$TIME_UNIT                             \
-		 --detailed-freq=1                                  \
-		 ./run_cpu
+         --tool=$MEM_TOOL                                   \
+         $LEAK_CHECK_OPTION                                 \
+         --trace-children=yes                               \
+         --time-unit=$TIME_UNIT                             \
+         --detailed-freq=1                                  \
+         --threshold=0.1                                    \
+         -v                                                 \
+         ./run_cpu

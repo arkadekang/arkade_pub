@@ -1,1 +1,0 @@
-runcpu --config=my_config.cfg --size=test --copies=1 --noreportable --iterations=1 505.mcf_r
