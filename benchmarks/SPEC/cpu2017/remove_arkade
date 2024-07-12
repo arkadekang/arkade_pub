@@ -1,0 +1,27 @@
+#!/bin/bash
+
+source ~/.bashrc
+wait
+
+psme | grep 'run_arkade\|valgrind' | grep -v grep | awk '{ print $1}' | xargs -r kill -9
+wait
+
+source shrc
+wait
+runcpu --config=my_config.cfg --action=clean fpspeed
+wait
+runcpu --config=my_config.cfg --action=clean fprate
+wait
+runcpu --config=my_config.cfg --action=clean intspeed
+wait
+runcpu --config=my_config.cfg --action=clean intrate
+wait
+
+rm -rf massif.out*
+wait
+
+rm -rf ./result/*
+wait
+
+rm -rf ./config/my_config.cfg.2024*
+wait

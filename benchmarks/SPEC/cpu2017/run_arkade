@@ -1,4 +1,8 @@
-#!/bin/bash -f
+#!/bin/bash
+
+ulimit -s 122880
+echo "Initial stack size"
+ulimit -s
 
 echo "Determine time unit [i, ms, B]"
 read TIME_UNIT

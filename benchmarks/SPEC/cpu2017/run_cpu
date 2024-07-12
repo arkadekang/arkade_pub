@@ -1,14 +1,36 @@
-#!/bin/bash -f
+#!/bin/bash
 
 source shrc
+wait
+
 ulimit -s 122880
+wait
 
 #runcpu --config=my_config.cfg --size=test --copies=1 --noreportable --iterations=1 intrate
 #runcpu --config=my_config.cfg --copies=16 --reportable --iterations=1 intrate
-runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 fpspeed
-runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 fprate
-runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 intrate
-runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 intspeed
 #runcpu --config=my_config.cfg --copies=1 --noreportable --iterations=1 503.bwaves_r
 #runcpu --config=my_config.cfg --copies=1 --noreportable --iterations=1 521.wrf_r
 #runcpu --config=my_config.cfg --copies=1 --noreportable --iterations=1 505.mcf_r
+echo "fspeed stack size"
+ulimit -s
+
+runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 fpspeed
+wait
+
+echo "fprate stack size"
+ulimit -s
+
+runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 fprate
+wait
+
+echo "intrate stack size"
+ulimit -s
+
+runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 intrate
+wait
+
+echo "intspeed stack size"
+ulimit -s
+
+runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 intspeed
+wait
