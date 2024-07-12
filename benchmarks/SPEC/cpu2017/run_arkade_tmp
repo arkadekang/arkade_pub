@@ -1,6 +1,7 @@
 #!/bin/bash
 
-ulimit -s 1048576
+#ulimit -s 1048576
+ulimit -s 122880
 echo "Initial stack size"
 ulimit -s
 
@@ -31,9 +32,10 @@ valgrind --extra-debuginfo-path=/usr/lib/debug/.build-id/81    \
          $LEAK_CHECK_OPTION                                    \
          --trace-children=yes                                  \
          --time-unit=$TIME_UNIT                                \
-         --main-stacksize=1048576                               \
+         --detailed-freq=1                                     \
          -v                                                    \
          ./run_cpu_tmp
+         #--main-stacksize=1048576                              \
          #--trace-children-skip=build_peak_mytest,build_base_mytest,/usr/bin/gfortran \
          #--trace-children-skip=/home/arkade/github/arkade_pub/benchmarks/SPEC/cpu2017/bin/specperl  \
          #--trace-children-skip=specmake,specrxp                \

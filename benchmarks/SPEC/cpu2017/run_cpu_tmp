@@ -3,7 +3,8 @@
 source shrc
 wait
 
-ulimit -s 1048576
+#ulimit -s 1048576
+ulimit -s 122880
 wait
 
 #runcpu --config=my_config.cfg --size=test --copies=1 --noreportable --iterations=1 intrate
@@ -14,6 +15,7 @@ wait
 echo "fspeed stack size"
 ulimit -s
 
+#runcpu --config=my_config.cfg --copies=1 --noreportable --iterations=1 --action=build --tune=peak 627.cam4_s
 runcpu --config=my_config.cfg --copies=1 --noreportable --iterations=1 --nobuild --tune=peak 627.cam4_s
 wait
 
