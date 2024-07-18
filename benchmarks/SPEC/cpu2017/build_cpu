@@ -1,13 +1,12 @@
 #!/bin/bash
 
-echo "[ARKADE] Run SPEC CPU2017"
+echo "[ARKADE] Build SPEC CPU2017"
 
 source shrc
 wait
 
-ulimit -s 2097152
-//ulimit -s 1048576
 #ulimit -s 122880
+ulimit -s 1048576
 wait
 
 #runcpu --config=my_config.cfg --size=test --copies=1 --noreportable --iterations=1 intrate
@@ -18,24 +17,24 @@ wait
 echo "fspeed stack size"
 ulimit -s
 
-#runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 --nobuild fpspeed
-runcpu --config=my_config.cfg --copies=1 --noreportable --iterations=1 --nobuild --tune=peak 627.cam4_s
+#runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 --action=build fpspeed
+runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 --tune=peak --action=build 627.cam4_s
 wait
-#
+
 #echo "fprate stack size"
 #ulimit -s
 #
-#runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 --nobuild fprate
+#runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 --action=build fprate
 #wait
-
+#
 #echo "intrate stack size"
 #ulimit -s
 #
-#runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 --nobuild intrate
+#runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 --action=build intrate
 #wait
-
+#
 #echo "intspeed stack size"
 #ulimit -s
 #
-#runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 --nobuild intspeed
+#runcpu --config=my_config.cfg --copies=1 --reportable --iterations=1 --action=build intspeed
 #wait

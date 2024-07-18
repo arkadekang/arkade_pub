@@ -1,6 +1,8 @@
 #!/bin/bash
 
-ulimit -s 122880
+ulimit -s 2097152
+#ulimit -s 1048576
+#ulimit -s 122880
 echo "Initial stack size"
 ulimit -s
 
@@ -26,12 +28,26 @@ else
     LEAK_CHECK_OPTION=""
 fi
 
+source build_cpu
+wait
+#valgrind --extra-debuginfo-path=/usr/lib/debug/.build-id/81 \
+#         --tool=$MEM_TOOL                                   \
+#         $LEAK_CHECK_OPTION                                 \
+#         --trace-children=yes                               \
+#         --trace-children-skip=/bin/pwd                     \
+#         --main-stacksize=96739684                           \
+#         ./run_cpu
+
 valgrind --extra-debuginfo-path=/usr/lib/debug/.build-id/81 \
          --tool=$MEM_TOOL                                   \
          $LEAK_CHECK_OPTION                                 \
          --trace-children=yes                               \
-         --time-unit=$TIME_UNIT                             \
+         --trace-children-skip=/bin/pwd                     \
          --detailed-freq=1                                  \
-         --threshold=0.1                                    \
-         -v                                                 \
+         --time-unit=$TIME_UNIT                             \
+         --main-stacksize=134217728                          \
          ./run_cpu
+         #--trace-children-skip=*sysinfo*,*specmake*,*specrxp*,*specpp*,*specxz*,*specsha512sum*          \
+         #--trace-children-skip='rawformat,bin/pwd,/usr/bin/lesspipe,/usr/bin/gcc,*specmake*,*specrxp*,*specpp*,*specxz*,*specsha512sum*'          \
+#         #-v                                                 \
+#         #--threshold=0.1                                    \

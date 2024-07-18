@@ -27,6 +27,9 @@ else
     LEAK_CHECK_OPTION=""
 fi
 
+runcpu --config=my_config.cfg --copies=1 --noreportable --iterations=1 --action=build --tune=peak 627.cam4_s
+wait
+
 valgrind --extra-debuginfo-path=/usr/lib/debug/.build-id/81    \
          --tool=$MEM_TOOL                                      \
          $LEAK_CHECK_OPTION                                    \
