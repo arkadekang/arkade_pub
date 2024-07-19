@@ -1,8 +1,8 @@
 #!/bin/bash
 
-ulimit -s 2097152
+#ulimit -s 2097152
 #ulimit -s 1048576
-#ulimit -s 122880
+ulimit -s 122880
 echo "Initial stack size"
 ulimit -s
 
